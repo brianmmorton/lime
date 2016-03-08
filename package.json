@@ -1,0 +1,31 @@
+{
+  "name": "lime",
+  "version": "1.0.0",
+  "description": "A dependency injection module for javascript applications.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npm run compile && npm run test:file test/index.js",
+    "compile": "./node_modules/.bin/babel src/index.js --out-file dist/index.js",
+    "test:file": "./node_modules/.bin/mocha --compilers js:./node_modules/.bin/babel"
+  },
+  "keywords": [
+    "es6",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Brian Morton",
+  "license": "ISC",
+  "devDependencies": {
+    "asset": "^0.4.13",
+    "babel": "^6.5.2",
+    "babel-cli": "^6.6.5",
+    "babel-plugin-transform-async-to-generator": "^6.5.0",
+    "babel-preset-es2015": "^6.6.0",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "babel": {
+    "presets": "es2015",
+    "plugins": ["transform-async-to-generator"]
+  }
+}
